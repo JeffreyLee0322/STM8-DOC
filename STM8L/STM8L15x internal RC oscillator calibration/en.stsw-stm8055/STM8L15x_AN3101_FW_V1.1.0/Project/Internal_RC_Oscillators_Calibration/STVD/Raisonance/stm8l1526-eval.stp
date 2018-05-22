@@ -1,0 +1,490 @@
+;	STMicroelectronics Project file
+
+[Version]
+Keyword=ST7Project
+Number=1.3
+
+[Project]
+Name=stm8l1526-eval
+Toolset=Raisonance
+
+[Config]
+0=Config.0
+1=Config.1
+
+[Config.0]
+ConfigName=Debug
+Target=stm8l1526-eval.elf
+OutputFolder=Debug
+Debug=$(TargetFName)
+
+[Config.1]
+ConfigName=Release
+Target=stm8l1526-eval.elf
+OutputFolder=Release
+Debug=$(TargetFName)
+
+[Root]
+ElemType=Project
+PathName=stm8l1526-eval
+Child=Root.STM8L15x_StdPeriph_Driver
+Config.0=Root.Config.0
+Config.1=Root.Config.1
+
+[Root.Config.0]
+Settings.0.0=Root.Config.0.Settings.0
+Settings.0.1=Root.Config.0.Settings.1
+Settings.0.2=Root.Config.0.Settings.2
+Settings.0.3=Root.Config.0.Settings.3
+Settings.0.4=Root.Config.0.Settings.4
+Settings.0.5=Root.Config.0.Settings.5
+Settings.0.6=Root.Config.0.Settings.6
+Settings.0.7=Root.Config.0.Settings.7
+Settings.0.8=Root.Config.0.Settings.8
+
+[Root.Config.1]
+Settings.1.0=Root.Config.1.Settings.0
+Settings.1.1=Root.Config.1.Settings.1
+Settings.1.2=Root.Config.1.Settings.2
+Settings.1.3=Root.Config.1.Settings.3
+Settings.1.4=Root.Config.1.Settings.4
+Settings.1.5=Root.Config.1.Settings.5
+Settings.1.6=Root.Config.1.Settings.6
+Settings.1.7=Root.Config.1.Settings.7
+Settings.1.8=Root.Config.1.Settings.8
+
+[Root.Config.0.Settings.0]
+String.6.0=2010,8,27,10,40,14
+String.100.0=ST Assembler Linker
+String.100.1=ST7 Cosmic
+String.100.2=STM8 Cosmic
+String.100.3=ST7 Metrowerks V1.1
+String.100.4=Raisonance
+String.101.0=Raisonance
+String.102.0=C:\Program Files\Raisonance\Ride
+String.103.0=bin
+String.104.0=INC\ST7;INC
+String.105.0=LIB\ST7
+String.106.0=Debug
+String.107.0=stm8l1526-eval.elf
+Int.108=0
+
+[Root.Config.0.Settings.1]
+String.6.0=2010,8,27,10,40,14
+String.100.0=$(TargetFName)
+String.101.0=
+String.102.0=
+String.103.0=.\;..\..\..\..\libraries\stm8l15x_stdperiph_driver\src;..\..\..\..\utilities\stm8_eval;..\..\src;..\..\..\..\utilities\stm8_eval\common;
+
+[Root.Config.0.Settings.2]
+String.2.0=
+String.6.0=2010,8,27,10,40,14
+String.100.0=STM8L152C6
+
+[Root.Config.0.Settings.3]
+String.2.0=Compiling $(InputFile)...
+String.3.0=rcstm8 $(InputFile) OBJECT($(IntermPath)$(InputName).$(ObjectExt)) $(ToolsetIncOpts) WRV(0) STM8(SMALL) DEBUG DGC(page0) AUTO -customSizeOpt -CustomOptimOT(7,SIZE) -CustomBasicLstPR($(IntermPath)$(InputName).lst) CD CO SB LAOB PIN(..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc) PIN(..\..\..\..\utilities\stm8_eval) PIN(..\..\..\..\utilities\stm8_eval\common) PIN(..\..\..\..\utilities\stm8_eval\stm8l1526_eval) PIN(..\..\inc) DF(STM8L15X_MD) DF(USE_STM8L1526_EVAL)
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).lst
+String.6.0=2010,8,27,10,51,45
+
+[Root.Config.0.Settings.4]
+String.2.0=Assembling $(InputFile)...
+String.3.0=mastm8 $(InputFile) OBJECT($(IntermPath)$(InputName).$(ObjectExt)) $(ToolsetIncOpts) QUIET ERRORPRINT DEBUG
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).lst
+String.6.0=2010,8,27,10,40,14
+
+[Root.Config.0.Settings.5]
+String.2.0=Running Pre-Link step
+String.6.0=2010,8,27,10,40,14
+String.8.0=
+
+[Root.Config.0.Settings.6]
+String.2.0=Running Linker
+String.3.0=rlstm8   $(ObjectFiles) TO($(OutputPath)$(TargetSName).aof) $(ToolsetLibOpts) -CustomOutFile[$(ProjectSFile).elf] -CustomRunHexConv DEBUGLINES DEBUGPUBLICS DEBUGSYMBOLS -customMapFile -customMapFile -customMapFilePR($(OutputPath)$(TargetSName).map) 
+String.3.1=omf2elf $(OutputPath)$(TargetSName).aof
+String.4.0=$(OutputPath)$(TargetFName)
+String.5.0=
+String.6.0=2010,8,27,10,51,45
+String.100.0=DATASTART(0x0) RAMSIZE(0x800) CODESTART(0x8000) CODESIZE(0x8000) STACKTOP(0x800) STACKSIZE(0x201) EEPROMSTART(0x1000) EEPROMSIZE(0x400)
+String.101.0=
+Int.0=0
+Int.1=0
+
+[Root.Config.0.Settings.7]
+String.2.0=Running Post-Build step
+String.3.0=omf2hex $(OutputPath)$(TargetSName).aof HEX
+String.6.0=2010,8,27,10,40,14
+
+[Root.Config.0.Settings.8]
+String.2.0=Performing Custom Build on $(InputFile)
+String.6.0=2010,8,27,10,40,14
+
+[Root.Config.1.Settings.0]
+String.6.0=2010,8,27,10,40,14
+String.100.0=ST Assembler Linker
+String.100.1=ST7 Cosmic
+String.100.2=STM8 Cosmic
+String.100.3=ST7 Metrowerks V1.1
+String.100.4=Raisonance
+String.101.0=Raisonance
+String.102.0=C:\Program Files\Raisonance\Ride
+String.103.0=bin
+String.104.0=INC\ST7;INC
+String.105.0=LIB\ST7
+String.106.0=Release
+String.107.0=stm8l1526-eval.elf
+Int.108=0
+
+[Root.Config.1.Settings.1]
+String.6.0=2010,8,27,10,40,14
+String.100.0=$(TargetFName)
+String.101.0=
+String.103.0=.\;..\..\..\..\libraries\stm8l15x_stdperiph_driver\src;..\..\..\..\utilities\stm8_eval;..\..\src;..\..\..\..\utilities\stm8_eval\common;
+
+[Root.Config.1.Settings.2]
+String.2.0=
+String.6.0=2010,8,27,10,40,14
+String.100.0=STM8L152C6
+
+[Root.Config.1.Settings.3]
+String.2.0=Compiling $(InputFile)...
+String.3.0=rcstm8   $(InputFile) OBJECT($(IntermPath)$(InputName).$(ObjectExt)) $(ToolsetIncOpts) DGC(page0) AUTO  WRV(0) -CustomBasicLstPR($(IntermPath)$(InputName).lst) CD CO SB -customSizeOpt -CustomOptimOT(7,SIZE) -CustomAutoReloc @$(OutputPath)$(TargetSName).areloc STM8(SMALL)
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).lst
+String.6.0=2010,8,27,10,40,14
+
+[Root.Config.1.Settings.4]
+String.2.0=Assembling $(InputFile)...
+String.3.0=mastm8 $(InputFile) OBJECT($(IntermPath)$(InputName).$(ObjectExt)) $(ToolsetIncOpts) QUIET ERRORPRINT
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).lst
+String.6.0=2010,8,27,10,40,14
+
+[Root.Config.1.Settings.5]
+String.2.0=Running Pre-Link step
+String.6.0=2010,8,27,10,40,14
+
+[Root.Config.1.Settings.6]
+String.2.0=Running Linker
+String.3.0=rlstm8   $(ObjectFiles) TO($(OutputPath)$(TargetSName).aof) $(ToolsetLibOpts) -CustomOutFile[$(ProjectSFile).elf] -CustomRunHexConv NODEBUGLINES NODEBUGPUBLICS NODEBUGSYMBOLS -CustomCodeCompConv 
+String.3.1=ccompst7_7.exe $(OutputPath)$(TargetSName).aof -O($(OutputPath)$(TargetSName).aof) -AOF -NOHEX -C
+String.3.2=omf2elf $(OutputPath)$(TargetSName).aof
+String.4.0=$(OutputPath)$(TargetFName)
+String.5.0=$(OutputPath)$(TargetSName).map
+String.6.0=2010,8,27,10,40,14
+String.100.0=DATASTART(0x0) RAMSIZE(0x800) CODESTART(0x8000) CODESIZE(0x8000) STACKTOP(0x800) STACKSIZE(0x201) EEPROMSTART(0x1000) EEPROMSIZE(0x400)
+String.101.0=
+
+[Root.Config.1.Settings.7]
+String.2.0=Running Post-Build step
+String.3.0=omf2hex $(OutputPath)$(TargetSName).aof HEX
+String.6.0=2010,8,27,10,40,14
+
+[Root.Config.1.Settings.8]
+String.2.0=Performing Custom Build on $(InputFile)
+String.6.0=2010,8,27,10,40,14
+
+[Root.STM8L15x_StdPeriph_Driver]
+ElemType=Folder
+PathName=STM8L15x_StdPeriph_Driver
+Child=Root.STM8L15x_StdPeriph_Driver...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_syscfg.c
+Next=Root.STM8_EVAL
+Config.0=Root.STM8L15x_StdPeriph_Driver.Config.0
+Config.1=Root.STM8L15x_StdPeriph_Driver.Config.1
+
+[Root.STM8L15x_StdPeriph_Driver.Config.0]
+Settings.0.0=Root.STM8L15x_StdPeriph_Driver.Config.0.Settings.0
+Settings.0.1=Root.STM8L15x_StdPeriph_Driver.Config.0.Settings.1
+Settings.0.2=Root.STM8L15x_StdPeriph_Driver.Config.0.Settings.2
+Settings.0.3=Root.STM8L15x_StdPeriph_Driver.Config.0.Settings.3
+
+[Root.STM8L15x_StdPeriph_Driver.Config.1]
+Settings.1.0=Root.STM8L15x_StdPeriph_Driver.Config.1.Settings.0
+Settings.1.1=Root.STM8L15x_StdPeriph_Driver.Config.1.Settings.1
+Settings.1.2=Root.STM8L15x_StdPeriph_Driver.Config.1.Settings.2
+Settings.1.3=Root.STM8L15x_StdPeriph_Driver.Config.1.Settings.3
+
+[Root.STM8L15x_StdPeriph_Driver.Config.0.Settings.0]
+String.6.0=2010,8,27,10,44,59
+String.8.0=Debug
+Int.0=0
+Int.1=0
+
+[Root.STM8L15x_StdPeriph_Driver.Config.0.Settings.1]
+String.2.0=Compiling $(InputFile)...
+String.3.0=rcstm8 $(InputFile) OBJECT($(IntermPath)$(InputName).$(ObjectExt)) $(ToolsetIncOpts) WRV(0) STM8(SMALL) DEBUG DGC(page0) AUTO -customSizeOpt -CustomOptimOT(7,SIZE) -CustomBasicLstPR($(IntermPath)$(InputName).lst) CD CO SB LAOB PIN(..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc) PIN(..\..\..\..\utilities\stm8_eval) PIN(..\..\..\..\utilities\stm8_eval\common) PIN(..\..\..\..\utilities\stm8_eval\stm8l1526_eval) PIN(..\..\inc) DF(STM8L15X_MD) DF(USE_STM8L1526_EVAL)
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).lst
+String.6.0=2010,8,27,10,51,45
+
+[Root.STM8L15x_StdPeriph_Driver.Config.0.Settings.2]
+String.2.0=Assembling $(InputFile)...
+String.3.0=mastm8 $(InputFile) OBJECT($(IntermPath)$(InputName).$(ObjectExt)) $(ToolsetIncOpts) QUIET ERRORPRINT DEBUG
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).lst
+String.6.0=2010,8,27,10,40,14
+
+[Root.STM8L15x_StdPeriph_Driver.Config.0.Settings.3]
+String.2.0=Performing Custom Build on $(InputFile)
+String.3.0=
+String.4.0=
+String.5.0=
+String.6.0=2010,8,27,10,40,14
+
+[Root.STM8L15x_StdPeriph_Driver.Config.1.Settings.0]
+String.6.0=2010,8,27,10,44,59
+String.8.0=Release
+Int.0=0
+Int.1=0
+
+[Root.STM8L15x_StdPeriph_Driver.Config.1.Settings.1]
+String.2.0=Compiling $(InputFile)...
+String.3.0=rcstm8   $(InputFile) OBJECT($(IntermPath)$(InputName).$(ObjectExt)) $(ToolsetIncOpts) DGC(page0) AUTO  WRV(0) -CustomBasicLstPR($(IntermPath)$(InputName).lst) CD CO SB -customSizeOpt -CustomOptimOT(7,SIZE) -CustomAutoReloc @$(OutputPath)$(TargetSName).areloc STM8(SMALL)
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).lst
+String.6.0=2010,8,27,10,40,14
+
+[Root.STM8L15x_StdPeriph_Driver.Config.1.Settings.2]
+String.2.0=Assembling $(InputFile)...
+String.3.0=mastm8 $(InputFile) OBJECT($(IntermPath)$(InputName).$(ObjectExt)) $(ToolsetIncOpts) QUIET ERRORPRINT
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).lst
+String.6.0=2010,8,27,10,40,14
+
+[Root.STM8L15x_StdPeriph_Driver.Config.1.Settings.3]
+String.2.0=Performing Custom Build on $(InputFile)
+String.3.0=
+String.4.0=
+String.5.0=
+String.6.0=2010,8,27,10,40,14
+
+[Root.STM8L15x_StdPeriph_Driver...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_syscfg.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_syscfg.c
+Next=Root.STM8L15x_StdPeriph_Driver...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_beep.c
+
+[Root.STM8L15x_StdPeriph_Driver...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_beep.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_beep.c
+Next=Root.STM8L15x_StdPeriph_Driver...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_clk.c
+
+[Root.STM8L15x_StdPeriph_Driver...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_clk.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_clk.c
+Next=Root.STM8L15x_StdPeriph_Driver...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_dma.c
+
+[Root.STM8L15x_StdPeriph_Driver...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_dma.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_dma.c
+Next=Root.STM8L15x_StdPeriph_Driver...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_exti.c
+
+[Root.STM8L15x_StdPeriph_Driver...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_exti.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_exti.c
+Next=Root.STM8L15x_StdPeriph_Driver...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_gpio.c
+
+[Root.STM8L15x_StdPeriph_Driver...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_gpio.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_gpio.c
+Next=Root.STM8L15x_StdPeriph_Driver...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_iwdg.c
+
+[Root.STM8L15x_StdPeriph_Driver...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_iwdg.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_iwdg.c
+Next=Root.STM8L15x_StdPeriph_Driver...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_i2c.c
+
+[Root.STM8L15x_StdPeriph_Driver...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_i2c.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_i2c.c
+Next=Root.STM8L15x_StdPeriph_Driver...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_spi.c
+
+[Root.STM8L15x_StdPeriph_Driver...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_spi.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_spi.c
+Next=Root.STM8L15x_StdPeriph_Driver...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_tim2.c
+
+[Root.STM8L15x_StdPeriph_Driver...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_tim2.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_tim2.c
+Next=Root.STM8L15x_StdPeriph_Driver...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_usart.c
+
+[Root.STM8L15x_StdPeriph_Driver...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_usart.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_usart.c
+
+[Root.STM8_EVAL]
+ElemType=Folder
+PathName=STM8_EVAL
+Child=Root.STM8_EVAL...\..\..\..\utilities\stm8_eval\common\stm8_eval_lcd.c
+Next=Root.User
+Config.0=Root.STM8_EVAL.Config.0
+Config.1=Root.STM8_EVAL.Config.1
+
+[Root.STM8_EVAL.Config.0]
+Settings.0.0=Root.STM8_EVAL.Config.0.Settings.0
+Settings.0.1=Root.STM8_EVAL.Config.0.Settings.1
+Settings.0.2=Root.STM8_EVAL.Config.0.Settings.2
+Settings.0.3=Root.STM8_EVAL.Config.0.Settings.3
+
+[Root.STM8_EVAL.Config.1]
+Settings.1.0=Root.STM8_EVAL.Config.1.Settings.0
+Settings.1.1=Root.STM8_EVAL.Config.1.Settings.1
+Settings.1.2=Root.STM8_EVAL.Config.1.Settings.2
+Settings.1.3=Root.STM8_EVAL.Config.1.Settings.3
+
+[Root.STM8_EVAL.Config.0.Settings.0]
+String.6.0=2010,8,27,10,44,40
+String.8.0=Debug
+Int.0=0
+Int.1=0
+
+[Root.STM8_EVAL.Config.0.Settings.1]
+String.2.0=Compiling $(InputFile)...
+String.3.0=rcstm8 $(InputFile) OBJECT($(IntermPath)$(InputName).$(ObjectExt)) $(ToolsetIncOpts) WRV(0) STM8(SMALL) DEBUG DGC(page0) AUTO -customSizeOpt -CustomOptimOT(7,SIZE) -CustomBasicLstPR($(IntermPath)$(InputName).lst) CD CO SB LAOB PIN(..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc) PIN(..\..\..\..\utilities\stm8_eval) PIN(..\..\..\..\utilities\stm8_eval\common) PIN(..\..\..\..\utilities\stm8_eval\stm8l1526_eval) PIN(..\..\inc) DF(STM8L15X_MD) DF(USE_STM8L1526_EVAL)
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).lst
+String.6.0=2010,8,27,10,51,45
+
+[Root.STM8_EVAL.Config.0.Settings.2]
+String.2.0=Assembling $(InputFile)...
+String.3.0=mastm8 $(InputFile) OBJECT($(IntermPath)$(InputName).$(ObjectExt)) $(ToolsetIncOpts) QUIET ERRORPRINT DEBUG
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).lst
+String.6.0=2010,8,27,10,40,14
+
+[Root.STM8_EVAL.Config.0.Settings.3]
+String.2.0=Performing Custom Build on $(InputFile)
+String.3.0=
+String.4.0=
+String.5.0=
+String.6.0=2010,8,27,10,40,14
+
+[Root.STM8_EVAL.Config.1.Settings.0]
+String.6.0=2010,8,27,10,44,40
+String.8.0=Release
+Int.0=0
+Int.1=0
+
+[Root.STM8_EVAL.Config.1.Settings.1]
+String.2.0=Compiling $(InputFile)...
+String.3.0=rcstm8   $(InputFile) OBJECT($(IntermPath)$(InputName).$(ObjectExt)) $(ToolsetIncOpts) DGC(page0) AUTO  WRV(0) -CustomBasicLstPR($(IntermPath)$(InputName).lst) CD CO SB -customSizeOpt -CustomOptimOT(7,SIZE) -CustomAutoReloc @$(OutputPath)$(TargetSName).areloc STM8(SMALL)
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).lst
+String.6.0=2010,8,27,10,40,14
+
+[Root.STM8_EVAL.Config.1.Settings.2]
+String.2.0=Assembling $(InputFile)...
+String.3.0=mastm8 $(InputFile) OBJECT($(IntermPath)$(InputName).$(ObjectExt)) $(ToolsetIncOpts) QUIET ERRORPRINT
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).lst
+String.6.0=2010,8,27,10,40,14
+
+[Root.STM8_EVAL.Config.1.Settings.3]
+String.2.0=Performing Custom Build on $(InputFile)
+String.3.0=
+String.4.0=
+String.5.0=
+String.6.0=2010,8,27,10,40,14
+
+[Root.STM8_EVAL...\..\..\..\utilities\stm8_eval\common\stm8_eval_lcd.c]
+ElemType=File
+PathName=..\..\..\..\utilities\stm8_eval\common\stm8_eval_lcd.c
+Next=Root.STM8_EVAL...\..\..\..\utilities\stm8_eval\stm8_eval.c
+
+[Root.STM8_EVAL...\..\..\..\utilities\stm8_eval\stm8_eval.c]
+ElemType=File
+PathName=..\..\..\..\utilities\stm8_eval\stm8_eval.c
+
+[Root.User]
+ElemType=Folder
+PathName=User
+Child=Root.User...\..\src\main.c
+Config.0=Root.User.Config.0
+Config.1=Root.User.Config.1
+
+[Root.User.Config.0]
+Settings.0.0=Root.User.Config.0.Settings.0
+Settings.0.1=Root.User.Config.0.Settings.1
+Settings.0.2=Root.User.Config.0.Settings.2
+Settings.0.3=Root.User.Config.0.Settings.3
+
+[Root.User.Config.1]
+Settings.1.0=Root.User.Config.1.Settings.0
+Settings.1.1=Root.User.Config.1.Settings.1
+Settings.1.2=Root.User.Config.1.Settings.2
+Settings.1.3=Root.User.Config.1.Settings.3
+
+[Root.User.Config.0.Settings.0]
+String.6.0=2010,8,27,10,45,25
+String.8.0=Debug
+Int.0=0
+Int.1=0
+
+[Root.User.Config.0.Settings.1]
+String.2.0=Compiling $(InputFile)...
+String.3.0=rcstm8 $(InputFile) OBJECT($(IntermPath)$(InputName).$(ObjectExt)) $(ToolsetIncOpts) WRV(0) STM8(SMALL) DEBUG DGC(page0) AUTO -customSizeOpt -CustomOptimOT(7,SIZE) -CustomBasicLstPR($(IntermPath)$(InputName).lst) CD CO SB LAOB PIN(..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc) PIN(..\..\..\..\utilities\stm8_eval) PIN(..\..\..\..\utilities\stm8_eval\common) PIN(..\..\..\..\utilities\stm8_eval\stm8l1526_eval) PIN(..\..\inc) DF(STM8L15X_MD) DF(USE_STM8L1526_EVAL)
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).lst
+String.6.0=2010,8,27,10,51,45
+
+[Root.User.Config.0.Settings.2]
+String.2.0=Assembling $(InputFile)...
+String.3.0=mastm8 $(InputFile) OBJECT($(IntermPath)$(InputName).$(ObjectExt)) $(ToolsetIncOpts) QUIET ERRORPRINT DEBUG
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).lst
+String.6.0=2010,8,27,10,40,14
+
+[Root.User.Config.0.Settings.3]
+String.2.0=Performing Custom Build on $(InputFile)
+String.3.0=
+String.4.0=
+String.5.0=
+String.6.0=2010,8,27,10,40,14
+
+[Root.User.Config.1.Settings.0]
+String.6.0=2010,8,27,10,45,25
+String.8.0=Release
+Int.0=0
+Int.1=0
+
+[Root.User.Config.1.Settings.1]
+String.2.0=Compiling $(InputFile)...
+String.3.0=rcstm8   $(InputFile) OBJECT($(IntermPath)$(InputName).$(ObjectExt)) $(ToolsetIncOpts) DGC(page0) AUTO  WRV(0) -CustomBasicLstPR($(IntermPath)$(InputName).lst) CD CO SB -customSizeOpt -CustomOptimOT(7,SIZE) -CustomAutoReloc @$(OutputPath)$(TargetSName).areloc STM8(SMALL)
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).lst
+String.6.0=2010,8,27,10,40,14
+
+[Root.User.Config.1.Settings.2]
+String.2.0=Assembling $(InputFile)...
+String.3.0=mastm8 $(InputFile) OBJECT($(IntermPath)$(InputName).$(ObjectExt)) $(ToolsetIncOpts) QUIET ERRORPRINT
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).lst
+String.6.0=2010,8,27,10,40,14
+
+[Root.User.Config.1.Settings.3]
+String.2.0=Performing Custom Build on $(InputFile)
+String.3.0=
+String.4.0=
+String.5.0=
+String.6.0=2010,8,27,10,40,14
+
+[Root.User...\..\src\main.c]
+ElemType=File
+PathName=..\..\src\main.c
+Next=Root.User...\..\src\lsi_measurement.c
+
+[Root.User...\..\src\lsi_measurement.c]
+ElemType=File
+PathName=..\..\src\lsi_measurement.c
+Next=Root.User...\..\src\hsi_calibration.c
+
+[Root.User...\..\src\hsi_calibration.c]
+ElemType=File
+PathName=..\..\src\hsi_calibration.c
+Next=Root.User...\..\src\stm8l15x_it.c
+
+[Root.User...\..\src\stm8l15x_it.c]
+ElemType=File
+PathName=..\..\src\stm8l15x_it.c
